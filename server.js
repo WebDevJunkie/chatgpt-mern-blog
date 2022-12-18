@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost/blog', {
@@ -34,6 +36,6 @@ app.post('/api/posts', async (req, res) => {
     res.send(post);
 });
 
-app.listen(3000, () => {
-    console.log('Server listening on port 3000');
+app.listen(4000, () => {
+    console.log('Server listening on port 4000');
 });
